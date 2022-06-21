@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import app.country.information.databinding.ItemCountryBinding
 import app.country.information.model.Country
+import com.bumptech.glide.Glide
 
 class CountriesAdapter(
     private val activity: Activity,
@@ -36,6 +37,11 @@ class CountriesAdapter(
             country: Country
         ) {
             binding.apply {
+                Glide
+                    .with(activity)
+                    .load(country.flags!!.png)
+                    .into(binding.ivFlag)
+
                 binding.tvCountry.text = country.name!!.common
             }
         }

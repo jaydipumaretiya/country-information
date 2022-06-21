@@ -1,5 +1,6 @@
 package app.country.information.ui.home
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -65,6 +66,8 @@ class HomeActivity : BaseActivity(R.layout.activity_home), OnCountryClickListene
     }
 
     override fun onCountryClicked(country: Country) {
-
+        val intent = Intent(this, CountryInformationActivity::class.java)
+        intent.putExtra("country", country)
+        startActivity(intent)
     }
 }

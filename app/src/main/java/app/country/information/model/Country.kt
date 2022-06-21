@@ -2,8 +2,9 @@ package app.country.information.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-class Country {
+class Country : Serializable {
     @SerializedName("name")
     @Expose
     var name: Name? = null

@@ -5,12 +5,15 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import app.country.information.R
 import app.country.information.databinding.ActivityHomeBinding
+import app.country.information.interfaces.OnCountryClickListener
+import app.country.information.model.Country
 import app.country.information.network.RetrofitBuilder
 import app.country.information.network.Status
 import app.country.information.ui.base.BaseActivity
+import app.country.information.ui.base.afterTextChanged
 import app.country.information.ui.base.delegate.viewBinding
 
-class HomeActivity : BaseActivity(R.layout.activity_home) {
+class HomeActivity : BaseActivity(R.layout.activity_home), OnCountryClickListener {
 
     private val binding by viewBinding(ActivityHomeBinding::inflate)
 
@@ -23,11 +26,12 @@ class HomeActivity : BaseActivity(R.layout.activity_home) {
             isNestedScrollingEnabled = true
         )
 
-        val countriesAdapter = CountriesAdapter(
-            this,
-            ArrayList()
-        )
+        val countriesAdapter = CountriesAdapter(this, ArrayList(), this)
         binding.rvCountries.adapter = countriesAdapter
+
+        binding.edtSearch.afterTextChanged {
+            countriesAdapter.filter.filter(it)
+        }
 
         val templatesViewModel =
             ViewModelProvider(this, CountryViewModelFactory(RetrofitBuilder.apiInterface)).get(
@@ -58,5 +62,9 @@ class HomeActivity : BaseActivity(R.layout.activity_home) {
                     }
                 }
             }
+    }
+
+    override fun onCountryClicked(country: Country) {
+
     }
 }

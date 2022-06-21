@@ -2,13 +2,18 @@ package app.country.information.model
 
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
+import app.country.information.model.NativeName
 
-class Fin {
+class Name {
+    @SerializedName("common")
+    @Expose
+    var common: String? = null
+
     @SerializedName("official")
     @Expose
     var official: String? = null
 
-    @SerializedName("common")
+    @SerializedName("nativeName")
     @Expose
-    var common: String? = null
+    var nativeName: NativeName? = null
 }

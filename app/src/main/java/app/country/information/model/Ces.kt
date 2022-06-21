@@ -1,18 +1,14 @@
+package app.country.information.model
 
-package app.country.information.model;
+import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.Expose
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-@Generated("jsonschema2pojo")
-public class Ces {
-
+class Ces {
     @SerializedName("official")
     @Expose
-    public String official;
+    var official: String? = null
+
     @SerializedName("common")
     @Expose
-    public String common;
-
+    var common: String? = null
 }

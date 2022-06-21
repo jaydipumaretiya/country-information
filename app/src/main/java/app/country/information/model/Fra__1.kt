@@ -1,18 +1,14 @@
+package app.country.information.model
 
-package app.country.information.model;
+import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.Expose
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-@Generated("jsonschema2pojo")
-public class Fra__1 {
-
+class Fra__1 {
     @SerializedName("f")
     @Expose
-    public String f;
+    var f: String? = null
+
     @SerializedName("m")
     @Expose
-    public String m;
-
+    var m: String? = null
 }

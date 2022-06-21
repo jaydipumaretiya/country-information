@@ -1,18 +1,14 @@
+package app.country.information.model
 
-package app.country.information.model;
+import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.Expose
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-@Generated("jsonschema2pojo")
-public class CoatOfArms {
-
+class CoatOfArms {
     @SerializedName("png")
     @Expose
-    public String png;
+    var png: String? = null
+
     @SerializedName("svg")
     @Expose
-    public String svg;
-
+    var svg: String? = null
 }

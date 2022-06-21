@@ -3,12 +3,12 @@ package app.country.information.model
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
 
-class Flags {
-    @SerializedName("png")
+class Eur {
+    @SerializedName("name")
     @Expose
-    var png: String? = null
+    var name: String? = null
 
-    @SerializedName("svg")
+    @SerializedName("symbol")
     @Expose
-    var svg: String? = null
+    var symbol: String? = null
 }

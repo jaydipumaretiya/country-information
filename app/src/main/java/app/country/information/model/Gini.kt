@@ -1,15 +1,10 @@
+package app.country.information.model
 
-package app.country.information.model;
+import com.google.gson.annotations.SerializedName
+import com.google.gson.annotations.Expose
 
-import javax.annotation.Generated;
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
-
-@Generated("jsonschema2pojo")
-public class Gini {
-
+class Gini {
     @SerializedName("2016")
     @Expose
-    public double _2016;
-
+    var _2016 = 0.0
 }

@@ -49,8 +49,7 @@ class HomeActivity : BaseActivity(R.layout.activity_home) {
                             }
                         }
                         Status.ERROR -> {
-//                            recyclerView.visibility = View.VISIBLE
-//                            progressBar.visibility = View.GONE
+                            hideLoading()
                             Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
                         }
                         Status.LOADING -> {

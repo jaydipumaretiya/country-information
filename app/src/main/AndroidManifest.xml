@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".CountryApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -26,8 +27,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.home.HomeActivity" />
-        <activity android:name=".ui.home.CountryInformationActivity" />
+        <activity android:name=".ui.country.CountryActivity" />
+        <activity android:name=".ui.country.CountryInformationActivity" />
     </application>
 
 </manifest>

@@ -9,7 +9,7 @@ import app.country.information.R
 import app.country.information.databinding.ActivitySplashBinding
 import app.country.information.ui.base.BaseActivity
 import app.country.information.ui.base.delegate.viewBinding
-import app.country.information.ui.home.HomeActivity
+import app.country.information.ui.country.CountryActivity
 
 class SplashActivity : BaseActivity(R.layout.activity_splash) {
 
@@ -30,7 +30,7 @@ class SplashActivity : BaseActivity(R.layout.activity_splash) {
                 synchronized(this) {
                     try {
                         sleep(3000)
-                        startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
+                        startActivity(Intent(this@SplashActivity, CountryActivity::class.java))
                         finish()
                     } catch (e: InterruptedException) {
                         e.printStackTrace()

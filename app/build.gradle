@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -54,19 +55,34 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
 
     implementation 'com.google.android.material:material:1.6.1'
+    implementation 'com.google.code.gson:gson:2.9.0'
 
-    // Retrofit
+    //Arch Components
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-common:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    //DI
+//    implementation 'io.insert-koin:koin-core:3.0.1'
+    implementation 'io.insert-koin:koin-android:2.0.1'
+    implementation 'io.insert-koin:koin-androidx-scope:2.0.1'
+    implementation 'io.insert-koin:koin-androidx-viewmodel:2.0.1'
+
+    //NetWork
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-    // Okhttp3
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.5'
     // http logger
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.5'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.5'
+
+    //Coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
 
     // Glide - https://github.com/bumptech/glide
     implementation 'com.github.bumptech.glide:glide:4.13.1'

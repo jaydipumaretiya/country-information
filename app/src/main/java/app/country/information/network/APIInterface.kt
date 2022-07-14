@@ -1,6 +1,6 @@
 package app.country.information.network
 
-import app.country.information.model.Country
+import app.country.information.data.remote.model.Country
 import retrofit2.http.GET
 
 interface APIInterface {

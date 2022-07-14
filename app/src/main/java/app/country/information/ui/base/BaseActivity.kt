@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import app.country.information.R
-import app.country.information.util.NetworkUtils
 
 abstract class BaseActivity(layoutResID: Int) : AppCompatActivity(layoutResID) {
 
@@ -27,15 +26,15 @@ abstract class BaseActivity(layoutResID: Int) : AppCompatActivity(layoutResID) {
 
     protected abstract fun setContent()
 
-    val isNetworkConnected: Boolean
-        get() {
-            return if (!NetworkUtils.isNetworkConnected(this@BaseActivity)) {
-                showErrorToast(getString(R.string.error_internet))
-                false
-            } else {
-                true
-            }
-        }
+//    val isNetworkConnected: Boolean
+//        get() {
+//            return if (!NetworkUtils.isNetworkConnected(this@BaseActivity)) {
+//                showErrorToast(getString(R.string.error_internet))
+//                false
+//            } else {
+//                true
+//            }
+//        }
 
     private fun showErrorToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

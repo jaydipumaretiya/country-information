@@ -8,18 +8,14 @@ import app.country.information.data.remote.exception.AppException
 import app.country.information.data.remote.model.Country
 import app.country.information.data.remote.model.resource.Resource
 import app.country.information.manager.CoroutinesManager
-import app.country.information.ui.utils.ResourceProvider
+import app.country.information.util.NetworkHelper
 import kotlinx.coroutines.*
 
 class CountryViewModel(
-    private val resourceProvider: ResourceProvider,
+    private val networkHelper: NetworkHelper,
     private val coroutinesManager: CoroutinesManager,
     private val countryRepository: CountryRepository
 ) : ViewModel() {
-
-    companion object {
-        private const val logTag = "CountryRepository"
-    }
 
     private val _countries = MutableLiveData<Resource<List<Country>>>()
     val countries: LiveData<Resource<List<Country>>>
@@ -27,34 +23,12 @@ class CountryViewModel(
 
     fun makeNetworkCall() {
         coroutinesManager.ioScope.launch {
-            _countries.postValue(Resource.loading(null))
-//            if (networkHelper.isNetworkConnected()) {
+            if (networkHelper.isNetworkConnected()) {
+                _countries.postValue(Resource.loading(null))
                 countryRepository.fetchAllCountries().let {
-//                    if (it.isSuccessful) {
-                        _countries.postValue(Resource.success(it.data))
-//                    } else _countries.postValue(Resource.error(AppException(it.getErrorMessage()!!)))
+                    _countries.postValue(Resource.success(it.data))
                 }
-//            } else _countries.postValue(Resource.error(AppException("No internet connection")))
-//        Log.i(logTag, "Set TextView using DataBinding")
-//        textObservable.set(resourceProvider.getString(R.string.info_txt))
-//
-//        coroutinesManager.ioScope.launch {
-//            val deferredList = ArrayList<Deferred<*>>()
-//
-//            Log.i(logTag, "Make 10 concurrent network calls")
-//            for (i in 0..10) {
-//
-//                deferredList.add(async {
-//                    Log.i(logTag, "Network Call ID: $i")
-//                    countryRepository.fetchAllCountries()
-//                })
-//            }
-//
-//            deferredList.joinAll()
-//            Log.i(logTag, "All Networks calls complete")
-//
-//            updateEvent.postValue(true)
-//            Log.i(logTag, "Update UI")
+            } else _countries.postValue(Resource.error(AppException("No internet connection")))
         }
     }
 }

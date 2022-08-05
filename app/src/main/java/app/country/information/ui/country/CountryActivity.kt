@@ -2,6 +2,7 @@ package app.country.information.ui.country
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import app.country.information.R
@@ -31,13 +32,6 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
 
     private fun initUI() {
         setLinearRecyclerView(vb.rvCountries)
-        vb.rvCountries.addItemDecoration(
-            DividerItemDecoration(
-                vb.rvCountries.context,
-                (vb.rvCountries.layoutManager as LinearLayoutManager).orientation
-            )
-        )
-
         countriesAdapter = CountriesAdapter(this, arrayListOf(), this)
         vb.rvCountries.adapter = countriesAdapter
     }
@@ -46,16 +40,19 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
         countryViewModel.countries.observe(this) {
             when (it.status) {
                 Resource.Status.SUCCESS -> {
+                    hideLoading()
                     it.data?.let { countries -> renderList(countries) }
                 }
                 Resource.Status.LOADING -> {
-
+                    showLoading()
                 }
                 Resource.Status.ERROR -> {
-
+                    hideLoading()
+                    Log.e("ERROR", " ---- " + it.getErrorMessage())
                 }
                 Resource.Status.CANCEL -> {
-
+                    hideLoading()
+                    Log.e("CANCEL", " ---- ")
                 }
             }
         }

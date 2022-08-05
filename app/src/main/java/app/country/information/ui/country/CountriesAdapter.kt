@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import app.country.information.data.remote.model.Country
 import app.country.information.databinding.ItemCountryBinding
 import app.country.information.interfaces.OnCountryClickListener
-import app.country.information.data.remote.model.Country
 import com.bumptech.glide.Glide
 
 class CountriesAdapter(
@@ -49,6 +49,7 @@ class CountriesAdapter(
                     .into(binding.ivFlag)
 
                 binding.tvCountry.text = country.name!!.common
+                binding.tvRegion.text = "Region: " + country.region
 
                 with(itemView) {
                     setOnClickListener {

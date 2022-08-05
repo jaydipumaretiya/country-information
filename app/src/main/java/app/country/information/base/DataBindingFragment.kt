@@ -18,5 +18,4 @@ abstract class DataBindingFragment<VB : ViewDataBinding> : BaseFragment() {
         vb = DataBindingUtil.inflate(inflater, layoutId(), container, false)
         return vb.root
     }
-
 }

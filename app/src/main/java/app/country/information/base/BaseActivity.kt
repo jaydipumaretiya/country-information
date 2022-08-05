@@ -1,29 +1,29 @@
 package app.country.information.base
 
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MenuItem
 import androidx.annotation.CallSuper
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import app.country.information.R
 
-/**
- *  Base Activity for the entire app
- */
 abstract class BaseActivity : AppCompatActivity() {
 
-    /**
-     *  Provides layout id to be inflated
-     */
     @LayoutRes
     abstract fun layoutId(): Int
 
+    lateinit var dialog: Dialog
+
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
-        //Uncomment this line to have font enabled textviews
-        //LayoutInflaterCompat.setFactory2(layoutInflater, LillyLayoutInflater(delegate))
         super.onCreate(savedInstanceState)
-        title = ""
         setContentView(layoutId())
     }
 
@@ -39,5 +39,42 @@ abstract class BaseActivity : AppCompatActivity() {
         recyclerView.isNestedScrollingEnabled = isNestedScrollingEnabled
         recyclerView.layoutManager = linearLayoutManager
         return recyclerView
+    }
+
+    protected fun setGridRecyclerView(
+        recyclerView: RecyclerView,
+        orientation: Int = RecyclerView.VERTICAL,
+        spanCount: Int = 2,
+        reverseLayout: Boolean = false,
+        hasFixedSize: Boolean = false,
+        isNestedScrollingEnabled: Boolean = false
+    ): RecyclerView {
+        val gridLayoutManager = GridLayoutManager(this, spanCount, orientation, reverseLayout)
+        recyclerView.setHasFixedSize(hasFixedSize)
+        recyclerView.isNestedScrollingEnabled = isNestedScrollingEnabled
+        recyclerView.layoutManager = gridLayoutManager
+        return recyclerView
+    }
+
+    fun showLoading() {
+        dialog = Dialog(this@BaseActivity)
+        val inflate = LayoutInflater.from(this@BaseActivity).inflate(R.layout.dialog_progress, null)
+        dialog.setContentView(inflate)
+        dialog.setCancelable(false)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.show()
+    }
+
+    fun hideLoading() {
+        if (dialog.isShowing) {
+            dialog.cancel()
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

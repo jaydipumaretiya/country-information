@@ -1,8 +1,8 @@
 package app.country.information.di.module
 
 import app.country.information.BuildConfig
-import app.country.information.data.remote.example.CountryRepository
-import app.country.information.network.APIInterface
+import app.country.information.data.remote.country.CountryRepository
+import app.country.information.data.remote.country.CountryInterface
 import org.koin.dsl.module
 
 val repoModule = module {
@@ -11,5 +11,5 @@ val repoModule = module {
 
     single { CountryRepository(get()) }
 
-    factory { createWebService<APIInterface>(get()) }
+    factory { createWebService<CountryInterface>(get()) }
 }

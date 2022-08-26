@@ -1,14 +1,10 @@
 package app.country.information.data.remote.model
 
-import com.google.gson.annotations.SerializedName
-import com.google.gson.annotations.Expose
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-class Fra {
-    @SerializedName("official")
-    @Expose
-    var official: String? = null
-
-    @SerializedName("common")
-    @Expose
-    var common: String? = null
-}
+@Parcelize
+data class Fra(
+    val f: String,
+    val m: String
+) : Parcelable

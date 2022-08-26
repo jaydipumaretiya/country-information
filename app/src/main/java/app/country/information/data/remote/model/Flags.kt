@@ -1,14 +1,10 @@
 package app.country.information.data.remote.model
 
-import com.google.gson.annotations.SerializedName
-import com.google.gson.annotations.Expose
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-class Flags {
-    @SerializedName("png")
-    @Expose
-    var png: String? = null
-
-    @SerializedName("svg")
-    @Expose
-    var svg: String? = null
-}
+@Parcelize
+data class Flags(
+    val png: String,
+    val svg: String
+) : Parcelable

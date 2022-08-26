@@ -1,6 +1,6 @@
 package app.country.information.data.remote.model
 
-data class Est(
+data class FraX(
     val common: String,
     val official: String
 )

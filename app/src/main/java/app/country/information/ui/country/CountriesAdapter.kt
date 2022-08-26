@@ -45,10 +45,10 @@ class CountriesAdapter(
             binding.apply {
                 Glide
                     .with(activity)
-                    .load(country.flags!!.png)
+                    .load(country.flags.png)
                     .into(binding.ivFlag)
 
-                binding.tvCountry.text = country.name!!.common
+                binding.tvCountry.text = country.name.common
                 binding.tvRegion.text = "Region: " + country.region
 
                 with(itemView) {
@@ -98,11 +98,6 @@ class CountriesAdapter(
                 charSequence: CharSequence,
                 filterResults: FilterResults
             ) {
-                //                if (filterResults.count > 0) {
-                //                    MainActivity.setResultsMessage(false);
-                //                } else {
-                //                    MainActivity.setResultsMessage(true);
-                //                }
                 countries = filterResults.values as ArrayList<Country>
                 notifyDataSetChanged()
             }

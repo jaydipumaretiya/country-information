@@ -21,7 +21,7 @@ class CountryViewModel(
     val countries: LiveData<Resource<List<Country>>>
         get() = _countries
 
-    fun makeNetworkCall() {
+    fun fetchAllCountries() {
         coroutinesManager.ioScope.launch {
             if (networkHelper.isNetworkConnected()) {
                 _countries.postValue(Resource.loading(null))

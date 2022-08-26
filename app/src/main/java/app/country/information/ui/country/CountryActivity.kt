@@ -3,15 +3,15 @@ package app.country.information.ui.country
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
 import app.country.information.R
 import app.country.information.base.DataBindingActivity
 import app.country.information.data.remote.model.Country
 import app.country.information.data.remote.model.resource.Resource
 import app.country.information.databinding.ActivityHomeBinding
+import app.country.information.extensions.afterTextChanged
 import app.country.information.interfaces.OnCountryClickListener
 import app.country.information.ui.country.viewmodel.CountryViewModel
+import app.country.information.ui.utils.Constants
 import org.koin.android.ext.android.inject
 
 class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryClickListener {
@@ -27,7 +27,11 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
 
         initUI()
         initObservers()
-        countryViewModel.makeNetworkCall()
+        countryViewModel.fetchAllCountries()
+
+        vb.edtSearch.afterTextChanged {
+            countriesAdapter.filter.filter(it)
+        }
     }
 
     private fun initUI() {
@@ -41,7 +45,7 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
             when (it.status) {
                 Resource.Status.SUCCESS -> {
                     hideLoading()
-                    it.data?.let { countries -> renderList(countries) }
+                    it.data?.let { countries -> renderCountries(countries) }
                 }
                 Resource.Status.LOADING -> {
                     showLoading()
@@ -58,13 +62,13 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
         }
     }
 
-    private fun renderList(users: List<Country>) {
-        countriesAdapter.updateTemplates(users)
+    private fun renderCountries(countries: List<Country>) {
+        countriesAdapter.updateTemplates(countries)
     }
 
     override fun onCountryClicked(country: Country) {
         val intent = Intent(this, CountryInformationActivity::class.java)
-        intent.putExtra("country", country)
+        intent.putExtra(Constants.EXTRA_COUNTRY, country)
         startActivity(intent)
     }
 }

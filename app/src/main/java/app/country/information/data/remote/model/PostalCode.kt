@@ -1,14 +1,10 @@
 package app.country.information.data.remote.model
 
-import com.google.gson.annotations.SerializedName
-import com.google.gson.annotations.Expose
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
-class PostalCode {
-    @SerializedName("format")
-    @Expose
-    var format: String? = null
-
-    @SerializedName("regex")
-    @Expose
-    var regex: String? = null
-}
+@Parcelize
+data class PostalCode(
+    val format: String,
+    val regex: String
+) : Parcelable

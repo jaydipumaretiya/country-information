@@ -1,6 +1,6 @@
 package app.country.information.interfaces
 
-import app.country.information.data.remote.model.Country
+import app.core.model.Country
 
 interface OnCountryClickListener {
     fun onCountryClicked(country: Country)

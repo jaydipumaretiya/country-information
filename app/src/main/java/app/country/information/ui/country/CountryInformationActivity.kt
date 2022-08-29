@@ -2,13 +2,13 @@ package app.country.information.ui.country
 
 import android.os.Bundle
 import app.country.information.R
-import app.country.information.base.DataBindingActivity
-import app.country.information.data.remote.model.Country
+import app.base.DataBindingActivity
+import app.core.model.Country
 import app.country.information.databinding.ActivityCountryInformationBinding
 import app.country.information.ui.utils.Constants
 import com.bumptech.glide.Glide
 
-class CountryInformationActivity : DataBindingActivity<ActivityCountryInformationBinding>() {
+class CountryInformationActivity : app.base.DataBindingActivity<ActivityCountryInformationBinding>() {
 
     override fun layoutId(): Int = R.layout.activity_country_information
 

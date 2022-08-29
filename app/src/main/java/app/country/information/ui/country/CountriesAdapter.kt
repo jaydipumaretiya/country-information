@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import app.country.information.data.remote.model.Country
+import app.core.model.Country
 import app.country.information.databinding.ItemCountryBinding
 import app.country.information.interfaces.OnCountryClickListener
 import com.bumptech.glide.Glide

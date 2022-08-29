@@ -6,7 +6,7 @@
 
         <variable
             name="country"
-            type="app.country.information.data.remote.model.Country" />
+            type="app.core.model.Country" />
     </data>
 
     <LinearLayout

@@ -12,5 +12,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Country Information"
 include ':app'
+include ':core-data'
+include ':core-extensions'
+include ':core-model'
+include ':core-network'
+include ':core-exception'
+include ':base'

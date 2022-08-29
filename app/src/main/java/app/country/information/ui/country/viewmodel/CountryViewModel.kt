@@ -3,10 +3,10 @@ package app.country.information.ui.country.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import app.country.information.data.remote.country.CountryRepository
-import app.country.information.data.remote.exception.AppException
-import app.country.information.data.remote.model.Country
-import app.country.information.data.remote.model.resource.Resource
+import app.core.data.repository.CountryRepository
+import app.core.network.exception.AppException
+import app.core.model.Country
+import app.core.network.Resource
 import app.country.information.manager.CoroutinesManager
 import app.country.information.util.NetworkHelper
 import kotlinx.coroutines.launch

@@ -13,9 +13,13 @@ dependencyResolutionManagement {
     }
 }
 include ':app'
+include ':base'
+
 include ':core-data'
+include ':core-database'
+include ':core-exception'
 include ':core-extensions'
+include ':core-koin'
 include ':core-model'
 include ':core-network'
-include ':core-exception'
-include ':base'
+include ':core-util'

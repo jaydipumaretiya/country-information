@@ -55,39 +55,29 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation(project(":base"))
+    
     implementation(project(":core-data"))
     implementation(project(":core-exception"))
     implementation(project(":core-extensions"))
+    implementation(project(":core-koin"))
     implementation(project(":core-model"))
     implementation(project(":core-network"))
+    implementation(project(":core-util"))
+
+    implementation(project(":feature-introduction"))
 
     implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation 'com.google.android.material:material:1.6.1'
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.9.1'
 
     //Arch Components
     implementation 'androidx.lifecycle:lifecycle-runtime:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-common:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-
-    //DI
-//    implementation 'io.insert-koin:koin-core:3.0.1'
-    implementation 'io.insert-koin:koin-android:2.0.1'
-    implementation 'io.insert-koin:koin-androidx-scope:2.0.1'
-    implementation 'io.insert-koin:koin-androidx-viewmodel:2.0.1'
-
-    //NetWork
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
-    // http logger
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.5'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.5'
 
     //Coroutine
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3'

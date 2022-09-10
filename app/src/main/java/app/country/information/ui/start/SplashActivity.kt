@@ -3,8 +3,11 @@ package app.country.information.ui.start
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import app.core.util.AppStartUtils
+import app.core.util.enums.AppStart
 import app.country.information.R
 import app.country.information.ui.country.CountryActivity
+import app.feature.introduction.IntroductionActivity
 
 class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
 
@@ -43,8 +46,7 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
                 synchronized(this) {
                     try {
                         sleep(1000)
-                        startActivity(Intent(this@SplashActivity, CountryActivity::class.java))
-                        finish()
+                        checkApplicationRunningStatus()
                     } catch (e: InterruptedException) {
                         e.printStackTrace()
                     }
@@ -52,5 +54,22 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
             }
         }
         splashThread.start()
+    }
+
+    private fun checkApplicationRunningStatus() {
+        when (AppStartUtils.checkAppStart(this)) {
+            AppStart.NORMAL -> {
+                startActivity(Intent(this@SplashActivity, CountryActivity::class.java))
+            }
+
+            AppStart.FIRST_TIME_VERSION -> {
+
+            }
+
+            AppStart.FIRST_TIME -> {
+                startActivity(Intent(this, IntroductionActivity::class.java))
+            }
+        }
+        finishAffinity()
     }
 }

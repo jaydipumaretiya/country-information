@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 val networkModule = module {
     factory { providesHTTPLogging() }
-    factory { providesOkHttpClient(get()) }
+    factory { providesOkHttpClient(interceptor = get()) }
 }
 
 fun provideRetrofit(okHttpClient: OkHttpClient, url: String): Retrofit {

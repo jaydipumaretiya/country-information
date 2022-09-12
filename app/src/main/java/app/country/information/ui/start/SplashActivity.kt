@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import app.core.util.AppStartUtils
 import app.core.util.enums.AppStart
 import app.country.information.R
-import app.country.information.ui.country.CountryActivity
+import app.feature.country.CountryActivity
 import app.feature.introduction.IntroductionActivity
 
 class SplashActivity : AppCompatActivity(R.layout.activity_splash) {

@@ -1,14 +1,13 @@
-package app.country.information.ui.country
+package app.feature.country
 
 import android.os.Bundle
-import app.country.information.R
-import app.base.DataBindingActivity
 import app.core.model.Country
-import app.country.information.databinding.ActivityCountryInformationBinding
-import app.country.information.ui.utils.Constants
+import app.core.util.Constants
+import app.feature.country.databinding.ActivityCountryInformationBinding
 import com.bumptech.glide.Glide
 
-class CountryInformationActivity : app.base.DataBindingActivity<ActivityCountryInformationBinding>() {
+class CountryInformationActivity :
+    app.base.DataBindingActivity<ActivityCountryInformationBinding>() {
 
     override fun layoutId(): Int = R.layout.activity_country_information
 
@@ -17,8 +16,7 @@ class CountryInformationActivity : app.base.DataBindingActivity<ActivityCountryI
         val country = intent.getParcelableExtra<Country>(Constants.EXTRA_COUNTRY)
         vb.country = country
 
-        Glide
-            .with(this)
+        Glide.with(this)
             .load(country!!.flags.png)
             .into(vb.ivFlag)
     }

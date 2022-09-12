@@ -1,4 +1,4 @@
-package app.country.information.interfaces
+package app.feature.country.interfaces
 
 import app.core.model.Country
 

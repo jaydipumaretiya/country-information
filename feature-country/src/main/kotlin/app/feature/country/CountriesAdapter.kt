@@ -1,4 +1,4 @@
-package app.country.information.ui.country
+package app.feature.country
 
 import android.app.Activity
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 import app.core.model.Country
-import app.country.information.databinding.ItemCountryBinding
-import app.country.information.interfaces.OnCountryClickListener
+import app.feature.country.databinding.ItemCountryBinding
+import app.feature.country.interfaces.OnCountryClickListener
 import com.bumptech.glide.Glide
 
 class CountriesAdapter(
@@ -43,8 +43,7 @@ class CountriesAdapter(
             country: Country
         ) {
             binding.apply {
-                Glide
-                    .with(activity)
+                Glide.with(activity)
                     .load(country.flags.png)
                     .into(binding.ivFlag)
 

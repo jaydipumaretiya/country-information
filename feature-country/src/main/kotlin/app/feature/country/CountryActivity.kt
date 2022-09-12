@@ -1,4 +1,4 @@
-package app.country.information.ui.country
+package app.feature.country
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,10 @@ import app.base.DataBindingActivity
 import app.core.extensions.afterTextChanged
 import app.core.model.Country
 import app.core.network.Resource
-import app.country.information.R
-import app.country.information.databinding.ActivityHomeBinding
-import app.country.information.interfaces.OnCountryClickListener
-import app.country.information.ui.country.viewmodel.CountryViewModel
-import app.country.information.ui.utils.Constants
+import app.core.util.Constants
+import app.feature.country.databinding.ActivityHomeBinding
+import app.feature.country.interfaces.OnCountryClickListener
+import app.feature.country.viewmodel.CountryViewModel
 import org.koin.android.ext.android.inject
 
 class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryClickListener {

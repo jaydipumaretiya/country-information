@@ -1,4 +1,4 @@
-package app.country.information.util
+package app.core.util
 
 import android.content.Context
 import android.net.ConnectivityManager

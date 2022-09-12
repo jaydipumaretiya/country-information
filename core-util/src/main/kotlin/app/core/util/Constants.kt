@@ -1,4 +1,4 @@
-package app.country.information.ui.utils
+package app.core.util
 
 object Constants {
     const val EXTRA_COUNTRY = "country"

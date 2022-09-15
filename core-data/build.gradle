@@ -13,7 +13,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-exception"))
-    implementation(project(":core-network"))
-    implementation(project(":core-model"))
+    implementation(project(':core-dependencies'))
+    implementation(project(':core-exception'))
+    implementation(project(':core-network'))
+    implementation(project(':core-model'))
 }

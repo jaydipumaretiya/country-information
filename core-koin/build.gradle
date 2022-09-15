@@ -13,9 +13,5 @@ android {
 }
 
 dependencies {
-    // Dependency Injection
-    // implementation 'io.insert-koin:koin-core:3.0.1'
-    api 'io.insert-koin:koin-android:2.0.1'
-    api 'io.insert-koin:koin-androidx-scope:2.0.1'
-    api 'io.insert-koin:koin-androidx-viewmodel:2.0.1'
+    implementation(project(':core-dependencies'))
 }

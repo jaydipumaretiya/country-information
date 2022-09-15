@@ -30,11 +30,11 @@ android {
 }
 
 dependencies {
-    implementation(project(":base"))
-    implementation(project(":core-data"))
+    implementation(project(':base'))
+    implementation(project(':core-data'))
     implementation(project(':core-dependencies'))
-    implementation(project(":core-extensions"))
-    implementation(project(":core-model"))
-    implementation(project(":core-network"))
-    implementation(project(":core-util"))
+    implementation(project(':core-extensions'))
+    implementation(project(':core-model'))
+    implementation(project(':core-network'))
+    implementation(project(':core-util'))
 }

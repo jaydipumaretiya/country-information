@@ -56,19 +56,15 @@ dependencies {
 
     implementation(project(":base"))
     
-    implementation(project(":core-data"))
-    implementation(project(":core-dependencies"))
-    implementation(project(":core-exception"))
-    implementation(project(":core-extensions"))
-    implementation(project(":core-koin"))
-    implementation(project(":core-model"))
-    implementation(project(":core-network"))
-    implementation(project(":core-util"))
+    implementation(project(':core-data'))
+    implementation(project(':core-dependencies'))
+    implementation(project(':core-exception'))
+    implementation(project(':core-extensions'))
+    implementation(project(':core-koin'))
+    implementation(project(':core-model'))
+    implementation(project(':core-network'))
+    implementation(project(':core-util'))
 
-    implementation(project(":feature-introduction"))
-    implementation(project(":feature-country"))
-
-    //Coroutine
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.3'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.3'
+    implementation(project(':feature-introduction'))
+    implementation(project(':feature-country'))
 }

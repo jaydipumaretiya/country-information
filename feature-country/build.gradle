@@ -4,11 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
+    namespace 'app.feature.country'
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
     }
     buildTypes {
         release {

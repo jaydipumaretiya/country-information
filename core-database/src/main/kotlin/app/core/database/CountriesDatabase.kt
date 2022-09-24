@@ -14,4 +14,4 @@ import app.core.database.entity.CountryEntity
 abstract class CountriesDatabase : RoomDatabase() {
 
     abstract fun countryDao(): CountryDao
-}}
+}

@@ -5,10 +5,11 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
+    namespace 'app.core.model'
 
     defaultConfig {
         minSdk 21
-        targetSdk 32
+        targetSdk 33
     }
 }

@@ -1,17 +1,17 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'org.jetbrains.kotlin.android'
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
+    namespace 'app.country.information'
 
     defaultConfig {
         applicationId "app.country.information"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -57,6 +57,7 @@ dependencies {
     implementation(project(":base"))
     
     implementation(project(':core-data'))
+    implementation(project(':core-database'))
     implementation(project(':core-dependencies'))
     implementation(project(':core-exception'))
     implementation(project(':core-extensions'))

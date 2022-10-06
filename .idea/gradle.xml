@@ -13,7 +13,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/core-data" />
-            <option value="$PROJECT_DIR$/core-database" />
             <option value="$PROJECT_DIR$/core-dependencies" />
             <option value="$PROJECT_DIR$/core-exception" />
             <option value="$PROJECT_DIR$/core-extensions" />

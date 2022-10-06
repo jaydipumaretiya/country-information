@@ -16,7 +16,6 @@ include ':app'
 include ':base'
 
 include ':core-data'
-include ':core-database'
 include ':core-dependencies'
 include ':core-exception'
 include ':core-extensions'

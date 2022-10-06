@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:background="@color/orange"
             android:fontFamily="@font/montserrat_semi_bold"
+            android:gravity="center"
             android:padding="12dp"
             android:text="@{country.name.common}"
             android:textAlignment="center"
@@ -45,19 +46,19 @@
                 android:layout_marginHorizontal="6dp"
                 android:orientation="vertical">
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:fontFamily="@font/montserrat_regular"-->
-<!--                    android:text="Country Area"-->
-<!--                    android:textSize="12sp" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:fontFamily="@font/montserrat_regular"-->
+                <!--                    android:text="Country Area"-->
+                <!--                    android:textSize="12sp" />-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="match_parent"-->
-<!--                    android:fontFamily="@font/montserrat_medium"-->
-<!--                    android:text="@string/app_name"-->
-<!--                    android:textSize="18sp" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:fontFamily="@font/montserrat_medium"-->
+                <!--                    android:text="@string/app_name"-->
+                <!--                    android:textSize="18sp" />-->
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
@@ -124,30 +125,30 @@
                     android:textSize="18sp"
                     tools:text="Country Sub Region" />
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:id="@+id/country_language_text"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Country Location" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/country_language_text"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Country Location" />-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:id="@+id/country_language"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@{country.latlng.toString()}" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/country_language"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="@{country.latlng.toString()}" />-->
 
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:id="@+id/country_captial_text"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="Country Capital" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/country_captial_text"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="Country Capital" />-->
 
-<!--                <androidx.appcompat.widget.AppCompatTextView-->
-<!--                    android:id="@+id/country_captial"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="@{country.capital[0]}" />-->
+                <!--                <androidx.appcompat.widget.AppCompatTextView-->
+                <!--                    android:id="@+id/country_captial"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:text="@{country.capital[0]}" />-->
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>

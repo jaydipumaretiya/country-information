@@ -1,4 +1,4 @@
-package app.country.information.manager
+package app.base.manager
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

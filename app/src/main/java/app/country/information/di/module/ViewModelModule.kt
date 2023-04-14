@@ -1,7 +1,7 @@
 package app.country.information.di.module
 
 import app.core.util.NetworkHelper
-import app.country.information.manager.CoroutinesManager
+import app.base.manager.CoroutinesManager
 import app.feature.country.viewmodel.CountryViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel

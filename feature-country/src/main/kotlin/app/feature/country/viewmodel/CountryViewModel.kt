@@ -8,10 +8,10 @@ import app.core.model.Country
 import app.core.network.Resource
 import app.core.network.exception.AppException
 import app.core.util.NetworkHelper
-import app.country.information.manager.CoroutinesManager
+import app.base.manager.CoroutinesManager
 import kotlinx.coroutines.launch
 
-class CountryViewModel(
+class CountryViewModel (
     private val networkHelper: NetworkHelper,
     private val coroutinesManager: CoroutinesManager,
     private val countryRepository: CountryRepository

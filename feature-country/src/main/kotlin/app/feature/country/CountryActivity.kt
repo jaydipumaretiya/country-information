@@ -1,13 +1,12 @@
 package app.feature.country
 
-import android.content.Intent
+import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.util.Log
 import app.base.DataBindingActivity
 import app.core.extensions.afterTextChanged
 import app.core.model.Country
 import app.core.network.Resource
-import app.core.util.Constants
 import app.feature.country.databinding.ActivityHomeBinding
 import app.feature.country.interfaces.OnCountryClickListener
 import app.feature.country.viewmodel.CountryViewModel
@@ -66,8 +65,8 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
     }
 
     override fun onCountryClicked(country: Country) {
-        val intent = Intent(this, CountryInformationActivity::class.java)
-        intent.putExtra(Constants.EXTRA_COUNTRY, country)
-        startActivity(intent)
+//        val intent = Intent(this, CountryInformationActivity::class.java)
+//        intent.putExtra(Constants.EXTRA_COUNTRY, country)
+//        startActivity(intent)
     }
 }

@@ -1,6 +1,5 @@
 package app.feature.country
 
-import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.util.Log
 import app.base.DataBindingActivity

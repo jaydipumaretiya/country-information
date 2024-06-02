@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-parcelize")
+    alias(libs.plugins.google.ksp)
+    alias(libs.plugins.dagger.hilt.android)
 }
 
 android {
@@ -72,4 +74,7 @@ dependencies {
 
     implementation(project(":feature:feature-introduction"))
     implementation(project(":feature:feature-country"))
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
 }

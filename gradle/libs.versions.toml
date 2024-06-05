@@ -11,7 +11,10 @@ google = "4.4.1"
 ksp = "1.9.0-1.0.13"
 hilt = "2.51.1"
 
+room = "2.6.1"
 view_model_compose = "2.8.1"
+retrofit = "2.9.0"
+okhttp = "4.12.0"
 ktor = "2.3.11"
 
 crashlytics = "2.9.9"
@@ -43,12 +46,23 @@ databindingCompilerCommon = "8.3.2"
 #androidx-viewbinding = { group = "androidx.databinding", name = "viewbinding", version.ref = "viewbinding" }
 #androidx-databinding-compiler-common = { group = "androidx.databinding", name = "databinding-compiler-common", version.ref = "databindingCompilerCommon" }
 
+#Room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compile = { group = "androidx.room", name = "room-compile", version.ref = "room" }
+
 #ViewModel Compose
 lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "view_model_compose" }
 
 #Dagger Hilt
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
+#Retrofit
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 
 #Ktor
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktor" }
@@ -58,6 +72,8 @@ ktor-serialization-kotlinx = { group = "io.ktor", name = "ktor-serialization-kot
 ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktor" }
 
 [bundles]
+room = ["room-runtime", "room-ktx"]
+retrofit = ["retrofit", "retrofit-converter-gson", "okhttp3", "okhttp3-logging-interceptor"]
 ktor = ["ktor-client-core", "ktor-client-android", "ktor-client-content-negotiation", "ktor-serialization-kotlinx", "ktor-client-logging"]
 
 [plugins]

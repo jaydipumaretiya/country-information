@@ -1,6 +1,6 @@
 package app.core.data.di
 
-import app.core.data.interfaces.CountryInterface
+import app.core.data.interfaces.CountryService
 import app.core.data.repository.CountryRepository
 import app.core.network.di.createWebService
 import app.core.network.di.provideRetrofit
@@ -12,5 +12,5 @@ val repoModule = module {
 
     single { CountryRepository(get()) }
 
-    factory { createWebService<CountryInterface>(get()) }
+    factory { createWebService<CountryService>(get()) }
 }

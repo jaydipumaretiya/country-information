@@ -67,7 +67,6 @@ dependencies {
     implementation(project(":core:core-dependencies"))
     implementation(project(":core:core-exception"))
     implementation(project(":core:core-extensions"))
-    implementation(project(":core:core-koin"))
     implementation(project(":core:core-model"))
     implementation(project(":core:core-network"))
     implementation(project(":core:core-util"))

@@ -20,7 +20,5 @@ android {
 }
 
 dependencies {
-    api(project(":core:core-koin"))
-
     implementation(project(":core:core-dependencies"))
 }

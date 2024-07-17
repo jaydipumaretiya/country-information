@@ -68,4 +68,3 @@ class CountryActivity : DataBindingActivity<ActivityHomeBinding>(), OnCountryCli
 //        intent.putExtra(Constants.EXTRA_COUNTRY, country)
 //        startActivity(intent)
     }
-}
